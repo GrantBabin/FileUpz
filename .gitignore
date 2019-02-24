@@ -18,4 +18,4 @@ dist
 *.ipr
 *.iws
 out/
-
+.vscode

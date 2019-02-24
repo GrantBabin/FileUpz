@@ -19,14 +19,40 @@
  * along with fileupz. If not, see <http://www.gnu.org/licenses/>.
  */
 
+package fileupz.fileupz.microservices.fileupload;
 
-package fileupz.fileupz;
+import java.io.Serializable;
+import java.util.UUID;
 
-/**
- * @author Lokraan {@literal Artinaire@gmail.com}
- */
-public final class Main {
-  public static void main(final String[] args) {
-    System.out.println("Have fun with java-bones");
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import fileupz.fileupz.microservices.users.User;
+
+@Entity
+@Table(name = "T_FILEUPLOAD")
+public class FileUpload implements Serializable {
+  private static final long serialVersionUID = 2L;
+
+  @Id
+  private String id;
+
+  @Column
+  private String name;
+
+  @ManyToOne
+  private User owner;
+
+  public FileUpload(User owner, String name) {
+    this.id = generateId();
+    this.name = name;
+    this.owner = owner;
+  }
+
+  private String generateId() {
+    return UUID.randomUUID().toString();
   }
 }

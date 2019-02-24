@@ -19,14 +19,19 @@
  * along with fileupz. If not, see <http://www.gnu.org/licenses/>.
  */
 
+package fileupz.fileupz.microservices.users;
 
-package fileupz.fileupz;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Import;
 
 /**
- * @author Lokraan {@literal Artinaire@gmail.com}
+ * RESTFul controller for accessing account information.
+ * 
+ * @author Lokraan
  */
-public final class Main {
-  public static void main(final String[] args) {
-    System.out.println("Have fun with java-bones");
-  }
+@EnableAutoConfiguration
+@EnableDiscoveryClient
+@Import(UsersConfiguration.class)
+public class UserController {
 }

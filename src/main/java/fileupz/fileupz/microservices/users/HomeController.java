@@ -19,14 +19,22 @@
  * along with fileupz. If not, see <http://www.gnu.org/licenses/>.
  */
 
+package fileupz.fileupz.microservices.users;
 
-package fileupz.fileupz;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author Lokraan {@literal Artinaire@gmail.com}
+ * Home page controller
+ * 
+ * @author Lokraan
  */
-public final class Main {
-  public static void main(final String[] args) {
-    System.out.println("Have fun with java-bones");
-  }
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/")
+	public String home() {
+		return "index";
+	}
 }
