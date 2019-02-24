@@ -2,6 +2,9 @@ language: java
 jdk:
   - oraclejdk8
 
+env:
+  - CODECOV_TOKEN="0947385d-cde8-4d81-8dd1-b61332550c6e"
+  
 script: mvn test
 
 after_success:
