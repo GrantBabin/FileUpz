@@ -2,8 +2,8 @@
 
 <h3>0.1</h3>
 
-* TODO
+  * TODO
 
 <h2>Author</h2>
 
-* Lokraan <a href="mailto:Artinaire@gmail.com">Artinaire@gmail.com</a>
+  * Lokraan <a href="mailto:Artinaire@gmail.com">Artinaire@gmail.com</a>
