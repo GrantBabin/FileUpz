@@ -24,14 +24,14 @@ package fileupz.fileupz.microservices.users;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * Repository for Account data implemented using Spring Data JPA.
  * 
  * @author Lokraan
  */
-public interface UserRepository extends Repository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
   /**
    * Find an account with the specified email.

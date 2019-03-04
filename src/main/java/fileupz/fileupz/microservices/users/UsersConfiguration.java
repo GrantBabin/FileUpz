@@ -19,16 +19,21 @@
  * along with fileupz. If not, see <http://www.gnu.org/licenses/>.
  */
 
+ 
 package fileupz.fileupz.microservices.users;
 
 import java.util.logging.Logger;
 import java.util.logging.Level;
+
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.context.annotation.Bean;
 
 /**
  * The accounts Spring configuration.
@@ -46,5 +51,10 @@ public class UsersConfiguration {
   public UsersConfiguration() {
     logger = Logger.getLogger(getClass().getName());
     logger.log(Level.CONFIG, "user config start");
+  }
+
+  @Bean
+  public PasswordEncoder bCryptPasswordEncoder() {
+    return new BCryptPasswordEncoder();
   }
 }

@@ -19,7 +19,6 @@
  * along with fileupz. If not, see <http://www.gnu.org/licenses/>.
  */
 
- 
 package fileupz.fileupz.microservices.users;
 
 import java.io.Serializable;
@@ -28,9 +27,11 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import fileupz.fileupz.microservices.fileupload.FileUpload;
 
@@ -41,11 +42,17 @@ import fileupz.fileupz.microservices.fileupload.FileUpload;
  * @author Lokraan
  */
 @Entity
-@Table(name="T_USER")
+@Table(
+  name="T_USER",
+  uniqueConstraints=@UniqueConstraint(columnNames={"email"})
+  )
 public class User implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  @Id
+  @Id @GeneratedValue
+  private long id;
+
+  @Column
   private String email;
 
   @Column
@@ -57,9 +64,28 @@ public class User implements Serializable {
   @OneToMany(cascade=CascadeType.ALL, mappedBy="owner")
   private List<FileUpload> fileUploads;
 
+  public User() {
+  }
+
   public User(String email, String displayname, String encryptedPassword) {
     this.email = email;
     this.displayname = displayname;
     this.encryptedPassword = encryptedPassword;
+  }
+
+  public void setDisplayname(String displayname) {
+    this.displayname = displayname;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getDisplayname() {
+    return this.displayname;
+  }
+
+  public String getEmail() {
+    return this.email;
   }
 }
