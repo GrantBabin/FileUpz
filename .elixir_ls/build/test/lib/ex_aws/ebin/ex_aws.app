@@ -1,6 +1,5 @@
 {application,ex_aws,
-             [{applications,[kernel,stdlib,elixir,logger,crypto,poison,
-                             hackney,sweet_xml]},
+             [{applications,[kernel,stdlib,elixir,logger,crypto]},
               {description,"Generic AWS client"},
               {modules,['Elixir.ExAws','Elixir.ExAws.Auth',
                         'Elixir.ExAws.Auth.Credentials',

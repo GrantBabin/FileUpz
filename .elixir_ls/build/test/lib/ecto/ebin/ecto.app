@@ -1,6 +1,5 @@
 {application,ecto,
-             [{applications,[kernel,stdlib,elixir,logger,crypto,decimal,
-                             jason]},
+             [{applications,[kernel,stdlib,elixir,logger,crypto,decimal]},
               {description,"A toolkit for data mapping and language integrated query for Elixir"},
               {modules,['Elixir.Ecto','Elixir.Ecto.Adapter',
                         'Elixir.Ecto.Adapter.Queryable',

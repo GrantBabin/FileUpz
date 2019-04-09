@@ -1,5 +1,5 @@
 {application,ex_aws_s3,
-             [{applications,[kernel,stdlib,elixir,logger,sweet_xml,ex_aws]},
+             [{applications,[kernel,stdlib,elixir,logger,ex_aws]},
               {description,"ex_aws_s3"},
               {modules,['Elixir.ExAws.Operation.ExAws.Operation.S3DeleteAllObjects',
                         'Elixir.ExAws.Operation.ExAws.S3.Download',

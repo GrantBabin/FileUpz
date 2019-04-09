@@ -1,6 +1,5 @@
 {application,plug,
-             [{applications,[kernel,stdlib,elixir,logger,telemetry,mime,
-                             plug_crypto]},
+             [{applications,[kernel,stdlib,elixir,logger,mime,plug_crypto]},
               {description,"A specification and conveniences for composable modules between web applications"},
               {modules,['Elixir.Collectable.Plug.Conn',
                         'Elixir.Inspect.Plug.Conn','Elixir.Plug',
