@@ -17,6 +17,10 @@ defmodule FileUpzWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/users", UserController, :index
+    get "/login", SessionController, :new
+    post "/login", SessionController, :login
+    delete "/sign-out", SessionController, :sign_out
   end
 
   # Other scopes may use custom stacks.
